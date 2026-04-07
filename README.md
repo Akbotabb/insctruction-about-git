@@ -77,3 +77,11 @@ HEAD - это указатель на текущий коммит.
 Жизненный цикл файла:
 untracked -> staged -> tracked
 tracked -> modified -> tracked
+
+## Схема статусов файлов
+```mermaid
+graph LR;
+untracked -- "git add" --> staged;
+staged -- "git commit" --> tracked;
+tracked -- "изменения" --> modified;
+modified -- "git add" --> staged;
